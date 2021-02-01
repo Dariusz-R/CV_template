@@ -1,0 +1,234 @@
+@page {
+    size: A4;
+    margin:0;
+}
+@media print {
+    html, body {
+        width: 21cm;
+        height: 29.7cm;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1cm 1cm 0.5cm 1cm;
+    display: grid;
+}
+
+#body-first{
+    grid-template-columns: 2fr 6fr;
+    grid-template-rows: 100px 202px 2fr 3fr 2fr 320px 20px ;
+    grid-template-areas: 
+    "photo name"
+    "photo personal"
+    "education education"
+    "skills skills"
+    "projects projects"
+    "work work"
+    "footer footer";
+    gap: 5px;
+}
+
+#body-second{  
+    grid-template-rows: 2fr 1fr 3fr 450px 1fr ;
+    grid-template-areas: 
+    "work"
+    "achievements"
+    "additional"
+    "gap"
+    "footer";
+    gap: 5px;
+}
+
+.section-container{
+    display: grid;
+    grid-template-rows: 26px auto;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    grid-template-areas: 
+    "header header"
+    "subcontainer subcontainer";
+}
+
+.section-header {
+    grid-area: header;
+    background-color: #264468;
+    color:#fafae7;
+    text-align: center;
+    border: solid #27272e 2px;
+    margin: 0;
+    font-size: 22px;
+    height: 26px;
+}
+
+.section-subcontainer{
+    grid-area: subcontainer;
+    font-size: 20px;
+    display: grid;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.not-bottom{border-bottom: solid black 1px;}
+.right-text{text-align: left;}
+.left-text{text-align: right;}
+.date {grid-area: date;}
+.important {font-weight: bold;}
+
+/*NAME AND PHOTO*/
+#photo-element{grid-area: photo;}
+
+#name-element{
+    grid-area: name;
+    text-align: right;
+    font-size: 56px;    
+}
+
+/*PERSONAL DETAILS*/
+#personal-details-containter{grid-area: personal;}
+
+#personal-details-subcontainer{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.personal-details-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: auto 10px auto 0;
+}
+
+/*EDUCATION*/
+#education-containter{grid-area: education;}
+
+
+#education-subcontainer{
+    display: grid;
+    font-size:20px;
+    padding-top: 5px;
+    grid-template-columns: 3fr 3fr 1fr 3fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "date university university university university"
+    "date field-label gap field-info gap2"
+    "date degree-label gap degree-info gap2";
+}
+
+.education-text-align{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#university{
+    grid-area: university;
+    text-align: center;
+}
+#field-label {
+    grid-area: field-label;
+    text-align: right;
+}
+#field-info {grid-area: field-info;}
+#degree-label {grid-area: degree-label;}
+#degree-info{grid-area: degree-info;}
+
+.font-16{
+    font-size: 16px;
+}
+
+/*SKILLS*/
+#skills-containter{grid-area: skills;}
+
+#skills-subcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 50px;
+    font-size: 20px;
+}
+
+.skills-list{padding: 5px 10px 5px 10px;}
+
+/*PROJECTS*/
+#projects-containter{grid-area: projects;}
+
+#projects-subcontainer{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+}
+
+.title{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px 0 10px;
+
+}
+
+.description{
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 20px 5px 0 ;
+}
+
+.last{padding: 5px 0 5px 0}
+
+/*WORK-EXPERIENCE*/
+#work-experience-containter{grid-area: work;}
+
+#work-experience-subcontainer-first {
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    padding-top: 5px;
+}
+
+#work-experience-subcontainer-second {
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    grid-template-rows: 1fr 50px;
+    padding-top: 5px;
+}
+
+.job{
+    display: grid;   
+    grid-template-rows: 35px 1fr;
+}
+
+
+.job-description li{
+    margin-top: 3px;
+    padding-right: 20px;
+    font-size: 18px;
+}
+
+/*ACHIEVEMENTS*/
+
+#achievements-containter{grid-area: achievements;}
+
+#achievements-subcontainter{
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+
+/*ADDITIONAL ACTIVITIES*/
+
+#additional-activities-containter{grid-area: additional;}
+
+#additional-activities-subcontainter{
+display: grid;
+grid-template-columns: 3fr 8fr;
+grid-template-rows: 1fr 2fr;
+}
+
+#footer {
+    grid-area: footer;
+    font-size: 8px;
+    text-align: center;
+}
